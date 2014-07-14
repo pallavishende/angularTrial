@@ -1,0 +1,53 @@
+
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
+<div id="big_wrapper">
+    <header>Welcome to customer page</header>
+    <nav id="top_menu"> 
+        <ul>
+            <li>Home</li>
+            <li>Tutorials</li>
+            <li>Podcast</li>           
+        </ul>        
+    </nav>
+    <section id="main_section">
+        <article>
+            <h1>customers list</h1>       
+                    <ul>                
+                        <li class="listCust" ng-repeat="cust in customers ">{{cust.name}} and {{cust.code}}</li>
+                    </ul>
+            <hr/>
+            <hr/>
+        </article>
+        <article>
+            <div ng-controller="basicController">
+                <form name="form" novalidate>
+                    <h2>New customer</h2>
+                    Name : <input type="text" ng-model="newCustomer.name" required/></br>
+                    Code : <input type="text" ng-model="newCustomer.code" required/></br>
+                    email: <input type="email" ng-model="newCustomer.email" name="uEmail"/>
+                    <div ng-show="form.uEmail.$dirty && form.uEmail.$invalid">Invalid:                
+                        <span ng-show="form.uEmail.$error.required">Tell us your email</span>
+                        <span ng-show="form.uEmail.$error.email">this is not valid email</span>                
+                    </div></br>
+
+                    Gender:<input type="radio" ng-model="newCustomer.gender" value="male" />Male
+                    <input type="radio" ng-model="newCustomer.gender" value="female" />Female </br>
+
+                    Comments: <div contenteditable="true" ng-model="newCustomer.comments" title="Click to add comments" ></div></br>
+
+                    <input type="checkbox" ng-model="newCustomer.agree" name="userAgree" required />
+                    I Agree
+
+                    <div ng-show="!newCustomer.agree">Please agree and sign</div></br>
+
+                    <button ng-click="addCust()" ng-disabled="form.$invalid"> Add Customer </button> 
+                    <button ng-click="reset()" ng-disabled=""> reset Customer </button> 
+
+                </form>
+
+             </div>
+        </article>
+    </section>
+    <footer id="main_footer">@copyright info 2012</footer>
+</div>
+    

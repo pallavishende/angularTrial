@@ -1,0 +1,61 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+header, nav, section, article, footer {    
+    display:block;
+}
+
+body{
+    text-align: center;    
+    width: 100%;
+}
+
+#big_wrapper{
+    
+    border: 1px;
+    width: 1000px;
+    margin: 20px auto;
+    text-align: left;   
+}
+
+#top_menu{
+    background: yellow;
+    border: 1px solid blue;
+    padding: 20px;
+}
+
+#top_menu li{    
+    display: inline-block;
+}
+
+#main_section{
+    float :left;
+    width: 660px;
+    margin: 30px;   
+}
+
+article{
+    background:#FFFBCC;
+    border: 1px solid red;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.listCust:nth-child(odd){color:green;}
+.listCust:nth-child(even){color:red;}
+
+div[contentEditable]{
+        cursor: pointer;
+        background-color: #D0D0D0;  
+        width: 500px;
+        height: 100px;
+    }
+    
+form input.ng-invalid.ng-dirty{
+    background-color: #FA787E;
+}
+form input.ng-valid.ng-dirty{
+    background-color: #78FA89;               
+} 
